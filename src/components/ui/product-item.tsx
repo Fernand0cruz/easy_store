@@ -34,8 +34,8 @@ const ProductItem = ({ product }: ProductItemProps) => {
                     {
                         product.discountPercentage > 0 ? (
                             <>
-                                <p className="font-semibold texr-sm">R$ {product.totalPrice.toFixed(2)}</p>
-                                <p className="opacity-75 line-through text-xs">R$ {product.basePrice.toFixed(2)}</p>
+                                <p className="font-semibold texr-sm">R${product.totalPrice.toFixed(2)}</p>
+                                <p className="opacity-75 line-through text-[.8rem]">R${product.basePrice.toFixed(2)}</p>
                             </>
                         ) : (
                             <p className="font-semibold texr-sm">R$ {product.basePrice.toFixed(2)}</p>
