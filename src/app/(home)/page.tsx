@@ -36,7 +36,7 @@ export default async function Home() {
   return (
     <div >
       <div className="m-5">
-        <PromotionalBanner src={"https://placehold.co/600x300/292929/white?text=Banner+Promo%C3%A7%C3%A3o+1"} alt=""/>
+        <PromotionalBanner src={"banner_1.png"} alt=""/>
       </div>
 
       <div className="mx-5">
@@ -49,7 +49,7 @@ export default async function Home() {
       </div>
 
       <div className="mx-5">
-        <PromotionalBanner src={"https://placehold.co/600x300/292929/white?text=Banner+Promo%C3%A7%C3%A3o+2"} alt=""/>
+        <PromotionalBanner src={"banner_4.png"} alt=""/>
       </div>
 
       <div className="my-5">
@@ -58,7 +58,7 @@ export default async function Home() {
       </div>
       
       <div className="mx-5">
-        <PromotionalBanner src={"https://placehold.co/600x300/292929/white?text=Banner+Promo%C3%A7%C3%A3o+3"} alt=""/>
+        <PromotionalBanner src={"banner_2.png"} alt=""/>
       </div>
 
       <div className="my-5">
@@ -67,7 +67,7 @@ export default async function Home() {
       </div>
 
       <div className="mx-5">
-        <PromotionalBanner src={"https://placehold.co/600x300/292929/white?text=Banner+Promo%C3%A7%C3%A3o+4"} alt=""/>
+        <PromotionalBanner src={"banner_3.png"} alt=""/>
       </div>
 
       <div className="my-5">
