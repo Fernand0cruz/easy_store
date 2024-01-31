@@ -34,10 +34,10 @@ async function main() {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id malesuada elit, eget vulputate justo. Sed sollicitudin velit dolor, ut gravida odio iaculis a.\nNulla risus justo, tempor eu felis eu, efficitur pulvinar risus. Sed viverra, nisi id egestas convallis, massa lorem convallis magna, vel convallis mi turpis nec ante. Maecenas posuere lacus id gravida dignissim. Morbi sit amet rutrum ex. Duis sit amet sem orci. Morbi non nisl sed mauris mattis ullamcorper quis eget metus.\nUt pellentesque ornare erat, vitae blandit ex pulvinar sit amet. Ut pellentesque lorem at eros vestibulum lobortis. Proin bibendum est facilisis nulla tristique vestibulum. Etiam placerat tortor sit amet lacinia volutpat. Curabitur lectus turpis, faucibus vitae tortor in, lacinia tristique neque.",
         imgUrls: [
-          "https://placehold.co/600x400",
-          "https://placehold.co/600x400",
-          "https://placehold.co/600x400",
-          "https://placehold.co/600x400",
+          "https://utfs.io/f/7f8a1656-4279-4df4-af99-4f145b7c21ed-yqn8tn.webp",
+          "https://utfs.io/f/93c2aa06-85a2-4d84-a581-f0b9fdf7c97d-p8nro3.webp",
+          "https://utfs.io/f/b5566386-257c-43b7-aa20-19f9544b3e08-yqn8tp.webp",
+          "https://utfs.io/f/de5d9270-72ff-4350-8fe8-8a4fd4569292-yqn8tq.webp",
         ],
         basePrice: 750,
         categoryId: mousesCategory.id,
