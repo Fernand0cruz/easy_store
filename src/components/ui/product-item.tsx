@@ -13,7 +13,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
             <div className="flex flex-col w-full gap-4">
                 <div className="bg-[#292929] rounded-lg h-[170px] w-full flex items-center justify-center relative">
                     <img
-                        src={product.imgUrls[0] + "?text=" + product.name + " img"}
+                        src={product.imgUrls[0]}
                         alt={product.name}
                         className="w-auto h-auto max-w-[80%] max-h-[70%]:"
                         style={{
