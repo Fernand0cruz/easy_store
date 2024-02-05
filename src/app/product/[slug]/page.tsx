@@ -9,7 +9,6 @@ interface ProductDetailsPageProps {
         slug: string
     }
 }
-
 const ProductDetailsPage = async ({ params: { slug } }: ProductDetailsPageProps) => {
     const product = await prismaClient.product.findFirst({
         where: {
