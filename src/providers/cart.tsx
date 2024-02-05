@@ -23,7 +23,7 @@ export const CartContext = createContext<ICartContext>({
     addProductToCart: () => {}
 })
 
-const cartProvider = ({ children }: { children: ReactNode }) => {
+export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [products, setProducts] = useState<CartProduct[]>([])
 
     const addProductToCart = (product: CartProduct) => {
@@ -44,4 +44,4 @@ const cartProvider = ({ children }: { children: ReactNode }) => {
     );
 }
 
-export default cartProvider;
+

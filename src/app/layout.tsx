@@ -4,7 +4,7 @@ import './globals.css'
 
 import Header from '@/components/ui/header'
 import { AuthProvider } from '@/providers/auth'
-import CartProvider from '@/providers/cart'
+import { CartProvider } from '@/providers/cart'
 import Footer from '@/components/ui/footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -31,6 +31,7 @@ export default function RootLayout({
               </div>
               <Footer />
             </CartProvider>
+            
           </AuthProvider>
         </div>
       </body>
