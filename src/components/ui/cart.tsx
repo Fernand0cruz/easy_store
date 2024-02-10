@@ -4,46 +4,53 @@ import { ShoppingCartIcon } from "lucide-react";
 import { CartContext } from "@/providers/cart";
 import CartItem from "./cart-item";
 import { Separator } from "./separator";
+import { ScrollArea } from "./scroll-area";
+import { Button } from "./button";
 
 const Cart = () => {
     const { products, subTotal, total, totalDiscount } = useContext(CartContext)
     return (
-        <>
+        <div className="flex flex-col h-full">
             <Badge className="gap-2 text-base uppercase border-primary py-[0.365rem] border-2 w-fit " variant={"outline"}>
                 <ShoppingCartIcon />
                 Carrinho
             </Badge>
-            <div className="flex flex-col gap-5 my-8">
-                {products.length > 0 ?
-                    products.map((product, index) => (
-                        <CartItem key={index} product={product} />
-                    )) : <p className="text-center font-semibold">Carrinho vazio, vamos as compras?</p>
-                }
+            <div className="flex flex-col gap-5 my-8 h-full max-h-full overflow-hidden">
+                <ScrollArea className="h-full">
+                    <div className="flex flex-col gap-5 h-full">
+                        {products.length > 0 ?
+                            products.map((product, index) => (
+                                <CartItem key={index} product={product} />
+                            )) : <p className="text-center font-semibold">Carrinho vazio, vamos as compras?</p>
+                        }
+                    </div>
+                </ScrollArea>
             </div>
             <div className="flex flex-col gap-3">
-                <Separator/>
+                <Separator />
                 <div className="flex items-center justify-between text-xs">
                     <p>Subtotal</p>
                     <p>R$ {subTotal.toFixed(2)}</p>
                 </div>
-                <Separator/>
+                <Separator />
                 <div className="flex items-center justify-between text-xs">
                     <p>Entrega</p>
                     <p>GRÁTIS</p>
                 </div>
-                <Separator/>
+                <Separator />
                 <div className="flex items-center justify-between text-xs">
                     <p>Descontos</p>
                     <p>- R$ {totalDiscount.toFixed(2)}</p>
                 </div>
-                <Separator/>
+                <Separator />
                 <div className="flex items-center justify-between text-sm font-bold">
                     <p>Preço Total</p>
                     <p>R$ {total.toFixed(2)}</p>
                 </div>
-                <Separator/>
+                <Separator />
+                <Button className="uppercase font-semibold">Finalizar Compra</Button>
             </div>
-        </>
+        </div>
     );
 }
 
