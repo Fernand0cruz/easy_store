@@ -17,7 +17,9 @@ const Cart = () => {
 
         const stripe = await loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY}`)
 
-        stripe?.redirectToCheckout({ sessionId: checkout.id })
+        stripe?.redirectToCheckout({
+            sessionId: checkout.id
+        })
     }
 
     return (
@@ -37,30 +39,35 @@ const Cart = () => {
                     </div>
                 </ScrollArea>
             </div>
-            <div className="flex flex-col gap-3">
-                <Separator />
-                <div className="flex items-center justify-between text-xs">
-                    <p>Subtotal</p>
-                    <p>R$ {subTotal.toFixed(2)}</p>
-                </div>
-                <Separator />
-                <div className="flex items-center justify-between text-xs">
-                    <p>Entrega</p>
-                    <p>GRÁTIS</p>
-                </div>
-                <Separator />
-                <div className="flex items-center justify-between text-xs">
-                    <p>Descontos</p>
-                    <p>- R$ {totalDiscount.toFixed(2)}</p>
-                </div>
-                <Separator />
-                <div className="flex items-center justify-between text-sm font-bold">
-                    <p>Preço Total</p>
-                    <p>R$ {total.toFixed(2)}</p>
-                </div>
-                <Separator />
-                <Button className="uppercase font-semibold" onClick={handleFinishPurchase}>Finalizar Compra</Button>
-            </div>
+            {
+                products.length > 0 && (
+
+                    <div className="flex flex-col gap-3">
+                        <Separator />
+                        <div className="flex items-center justify-between text-xs">
+                            <p>Subtotal</p>
+                            <p>R$ {subTotal.toFixed(2)}</p>
+                        </div>
+                        <Separator />
+                        <div className="flex items-center justify-between text-xs">
+                            <p>Entrega</p>
+                            <p>GRÁTIS</p>
+                        </div>
+                        <Separator />
+                        <div className="flex items-center justify-between text-xs">
+                            <p>Descontos</p>
+                            <p>- R$ {totalDiscount.toFixed(2)}</p>
+                        </div>
+                        <Separator />
+                        <div className="flex items-center justify-between text-sm font-bold">
+                            <p>Preço Total</p>
+                            <p>R$ {total.toFixed(2)}</p>
+                        </div>
+                        <Separator />
+                        <Button className="uppercase font-semibold" onClick={handleFinishPurchase}>Finalizar Compra</Button>
+                    </div>
+                )
+            }
         </div>
     );
 }
