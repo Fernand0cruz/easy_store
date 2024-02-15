@@ -1,6 +1,6 @@
 "use client"
-import { ReactNode, createContext, useMemo } from "react"
-import { useState } from "react"
+
+import { ReactNode, createContext, useMemo, useState, useEffect } from "react"
 import { ProductWithTotalPrice } from "@/helpers/product"
 
 export interface CartProduct extends ProductWithTotalPrice {
@@ -29,23 +29,40 @@ export const CartContext = createContext<ICartContext>({
     total: 0,
     subTotal: 0,
     totalDiscount: 0,
-    addProductToCart: () => {},
-    decreaseProductQuantity: () => {}, 
-    increaseProductQuantity: () => {},
-    removeProductFromCart: () => {}
+    addProductToCart: () => { },
+    decreaseProductQuantity: () => { },
+    increaseProductQuantity: () => { },
+    removeProductFromCart: () => { }
 })
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-    const [products, setProducts] = useState<CartProduct[]>([])
+    const [products, setProducts] = useState<CartProduct[]>(
+        () => {
+            if (typeof window !== 'undefined') {
+                const cart = window.localStorage.getItem("cart")
+                if (cart) {
+                    return JSON.parse(cart)
+                }
+            }
+            return []
+        }
+    )
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.localStorage.setItem("cart", JSON.stringify(products))
+        }
+    }, [products])
+
 
     const subTotal = useMemo(() => {
-        return products.reduce((acc, product) =>{ 
+        return products.reduce((acc, product) => {
             return acc + Number(product.basePrice * product.quantity)
         }, 0)
     }, [products])
 
     const total = useMemo(() => {
-        return products.reduce((acc, product) =>{ 
+        return products.reduce((acc, product) => {
             return acc + Number(product.totalPrice * product.quantity)
         }, 0)
     }, [products])
@@ -71,10 +88,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             setProducts(newProducts)
             return
         }
-        setProducts((prevProducts) => [...prevProducts, product])    
+        setProducts((prevProducts) => [...prevProducts, product])
     }
     const decreaseProductQuantity = (productId: string) => {
-        setProducts((prev) => 
+        setProducts((prev) =>
             prev.map((p) => {
                 if (p.id === productId) {
                     return {
@@ -84,12 +101,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
                 }
                 return p
             })
-            .filter((p) => p.quantity > 0)
+                .filter((p) => p.quantity > 0)
         )
 
     }
     const increaseProductQuantity = (productId: string) => {
-        setProducts((prev) => 
+        setProducts((prev) =>
             prev.map((p) => {
                 if (p.id === productId) {
                     return {
@@ -102,7 +119,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         )
     }
     const removeProductFromCart = (productId: string) => {
-        setProducts((prev) => 
+        setProducts((prev) =>
             prev.filter((p) => p.id !== productId)
         )
     }
