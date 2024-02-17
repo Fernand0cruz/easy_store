@@ -8,7 +8,7 @@ const CategoryItens = ({ category }: CategoryItensProps) => {
     return (
         <Link href={`/category/${category.slug}`}>
         <div className="flex flex-col">
-            <div className="w-full h-[150px] flex justify-center items-center bg-gradient-to-r from-[#5033c3] to-[rgba(80, 51, 195, 0.20)] rounded-tl-lg rounded-tr-lg">
+            <div className="w-full h-[150px] flex justify-center items-center rounded-tl-lg rounded-tr-lg bg-category-item-gradient">
                 <img src={category.imgUrl} alt={category.name} width={0} height={0} sizes="100vw" className="h-auto max-h-[70%] w-auto max-w-[80%]" style={{ objectFit: "contain" }} />
             </div>
             <div className="bg-accent py-3 rounded-br-lg rounded-bl-lg">
