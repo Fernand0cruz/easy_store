@@ -84,6 +84,15 @@ const Header = () => {
                                 <Button variant="outline" className="w-full justify-start gap-2"><ListOrderedIcon size={16} />Catálogo</Button>
                             </Link>
                         </SheetClose>
+                        {
+                            status === "authenticated" && (
+                                <SheetClose asChild>
+                                    <Link href="/order">
+                                        <Button variant="outline" className="w-full justify-start gap-2"><ListOrderedIcon size={16} />Ordem de produto</Button>
+                                    </Link>
+                                </SheetClose>
+                            )
+                        }
                     </div>
                 </SheetContent>
             </Sheet>
