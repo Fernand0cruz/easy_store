@@ -31,7 +31,6 @@ export default function RootLayout({
               </div>
               <Footer />
             </CartProvider>
-            
           </AuthProvider>
         </div>
       </body>

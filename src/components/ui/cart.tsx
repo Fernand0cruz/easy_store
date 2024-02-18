@@ -11,7 +11,6 @@ import { loadStripe } from "@stripe/stripe-js";
 
 const Cart = () => {
     const { products, subTotal, total, totalDiscount } = useContext(CartContext)
-
     const handleFinishPurchase = async () => {
         const checkout = await createCheckout(products)
 

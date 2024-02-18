@@ -1,9 +1,16 @@
-const PageDashboard = async () => {
+import { prismaClient } from "@/lib/prisma"
+import Dashboard from "./components/dashboard"
+
+export default async function PageDashboard() {
+    const isAdmin = await prismaClient.user.findFirst({
+        where: {
+            isAdmin : true
+        }
+    })
+
     return (
-        <div>
-            <h1>Dashboard</h1>
-        </div>
+        <>
+            <Dashboard isAdmin={isAdmin}/>
+        </>
     )
 }
-
-export default PageDashboard;
