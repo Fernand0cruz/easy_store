@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { HeadphonesIcon, KeyboardIcon, Monitor, MouseIcon, MousePointerSquare, SpeakerIcon, StarIcon } from "lucide-react";
-import PromotionalBanner from "../(home)/components/promotional-banner";
+import PromotionalBanner from "../(shop)/components/promotional-banner";
 import ProductList from "@/components/ui/product-list";
 import { prismaClient } from "@/lib/prisma";
 import { space } from "postcss/lib/list";
