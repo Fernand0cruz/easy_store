@@ -3,7 +3,6 @@ import { HeadphonesIcon, KeyboardIcon, Monitor, MouseIcon, MousePointerSquare, S
 import PromotionalBanner from "../(shop)/components/promotional-banner";
 import ProductList from "@/components/ui/product-list";
 import { prismaClient } from "@/lib/prisma";
-import { space } from "postcss/lib/list";
 
 export default async function Offers() {
     const mouses = await prismaClient.product.findMany({
@@ -69,7 +68,7 @@ export default async function Offers() {
     return (
         <div className="flex flex-col gap-8 mb-8">
             <div className="m-5">
-                <PromotionalBanner src={"banner_1.png"} alt="" />
+                <PromotionalBanner src={"/banner_1.png"} alt="" />
             </div>
             {
                 mouses.length > 0 && (

@@ -3,6 +3,7 @@ import Categories from "./components/categories"
 import ProductList from "../../../components/ui/product-list"
 import SectionTittle from "../../../components/ui/section-tittle"
 import PromotionalBanner from "./components/promotional-banner"
+import Link from "next/link"
 
 export default async function Home() {
   const deals = await prismaClient.product.findMany({
@@ -34,9 +35,11 @@ export default async function Home() {
     }
   })
   return (
-    <div >
+    <div>
       <div className="m-5">
-        <PromotionalBanner src={"banner_1.png"} alt=""/>
+        <Link href={"offers"}>
+          <PromotionalBanner src={"/banner_1.png"} alt="" />
+        </Link>
       </div>
 
       <div className="mx-5">
@@ -49,16 +52,20 @@ export default async function Home() {
       </div>
 
       <div className="mx-5">
-        <PromotionalBanner src={"banner_4.png"} alt=""/>
+        <Link href={"/category/keyboards"}>
+          <PromotionalBanner src={"/banner_2.png"} alt="" />
+        </Link>
       </div>
 
       <div className="my-5">
         <SectionTittle>Teclado</SectionTittle>
         <ProductList products={keyboards} />
       </div>
-      
+
       <div className="mx-5">
-        <PromotionalBanner src={"banner_2.png"} alt=""/>
+        <Link href={"/category/mouses"}>
+          <PromotionalBanner src={"/banner_3.png"} alt="" />
+        </Link>
       </div>
 
       <div className="my-5">
@@ -67,7 +74,9 @@ export default async function Home() {
       </div>
 
       <div className="mx-5">
-        <PromotionalBanner src={"banner_3.png"} alt=""/>
+        <Link href={"/category/headphones"}>
+          <PromotionalBanner src={"/banner_4.png"} alt="" />
+        </Link>
       </div>
 
       <div className="my-5">

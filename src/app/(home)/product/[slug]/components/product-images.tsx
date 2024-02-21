@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react";
+import Image from "next/image";
 interface ProductImagesProps {
     name: string
     imageUrls: string[]
@@ -13,11 +14,13 @@ const ProductImage = ({ imageUrls, name }: ProductImagesProps) => {
         <div className="flex flex-col">
 
             <div className="bg-accent h-[380px w-full flex items-center justify-center">
-                <img src={currentImage + "?text=" + name + " img"} alt={name}
-                    className='h-auto w-auto max-h-[70%] max-w-[80%]'
-                    style={{
-                        objectFit: "contain"
-                    }}
+                <Image 
+                    src={currentImage}
+                    alt={name}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className='h-auto w-auto max-h-[70%] max-w-[80%] object-contain'
                 />
             </div>
             <div>
