@@ -35,7 +35,12 @@ const ProductImage = ({ imageUrls, name }: ProductImagesProps) => {
                                 onClick={() => handleImageClick(imageUrls)}
                             >
 
-                                <img src={imageUrls + "?text=" + name + " img"} alt={name}
+                                <Image 
+                                    src={imageUrls} 
+                                    alt={name}
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
                                     className='h-auto w-auto max-h-[70%] max-w-[80%]'
                                 />
                             </button>
