@@ -1,9 +1,12 @@
-"use server"
+"use server";
 
-import { CartProduct } from "@/providers/cart"
-import Stripe from "stripe"
+import { CartProduct } from "@/providers/cart";
+import Stripe from "stripe";
 
-export const createCheckout = async (products: CartProduct[]) => {
+export const createCheckout = async (
+    products: CartProduct[],
+    orderId: string,
+) => {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
         apiVersion: "2023-10-16",
     });
@@ -13,8 +16,10 @@ export const createCheckout = async (products: CartProduct[]) => {
         mode: "payment",
         success_url: process.env.URL_BASE,
         cancel_url: process.env.URL_BASE,
-        
-        line_items: products.map(product => {
+        metadata: {
+            orderId,
+        },
+        line_items: products.map((product) => {
             return {
                 price_data: {
                     currency: "brl",
@@ -26,16 +31,8 @@ export const createCheckout = async (products: CartProduct[]) => {
                     unit_amount: product.totalPrice * 100,
                 },
                 quantity: product.quantity,
-            }
-        })
-    })
-
-
-
-
-
-
-
-
-    return checkout
-}
+            };
+        }),
+    });
+    return checkout;
+};
