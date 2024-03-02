@@ -8,11 +8,11 @@ import { ScrollArea } from "./scroll-area";
 import { Button } from "./button";
 import { createCheckout } from "@/actions/checkout";
 import { loadStripe } from "@stripe/stripe-js";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { createOrder } from "@/actions/order";
 
 const Cart = () => {
-    const { data } = useSession()
+    const { data, status } = useSession()
     const { products, subTotal, total, totalDiscount } = useContext(CartContext)
     const handleFinishPurchase = async () => {
         if(!data?.user){
@@ -72,7 +72,13 @@ const Cart = () => {
                             <p>R$ {total.toFixed(2)}</p>
                         </div>
                         <Separator />
-                        <Button className="uppercase font-semibold" onClick={handleFinishPurchase}>Finalizar Compra</Button>
+                        {
+                            status === "unauthenticated" ? (
+                                <Button className="uppercase font-semibold" onClick={() => signIn()}>Logar para finalizar compra</Button>
+                            ) : (
+                                <Button className="uppercase font-semibold" onClick={handleFinishPurchase}>Finalizar Compra</Button>
+                            )
+                        }
                     </div>
                 )
             }
