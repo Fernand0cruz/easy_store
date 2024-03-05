@@ -3,6 +3,7 @@ import { authOptions } from "@/lib/auth";
 import { prismaClient } from "@/lib/prisma";
 import { PackageSearchIcon } from "lucide-react";
 import { getServerSession } from "next-auth";
+import OrderItem from "./components/order-otem";
 
 
 const PageOrder = async () => {
@@ -33,29 +34,11 @@ const PageOrder = async () => {
                 <PackageSearchIcon size={16} />
                 Meus Pedidos
             </Badge>
-
-            <div>
+            <div className="flex flex-col gap-5 mt-5">
                 {
-                    orders.map((order) => {
-                        return (
-                            <div key={order.id}>
-                                <h2>Pedido: {order.id}</h2>
-                                <div>
-                                    {
-                                        order.orderProducts.map((orderProduct) => {
-                                            return (
-                                                <div key={orderProduct.id}>
-                                                    <h3>{orderProduct.product.name}</h3>
-                                                    <p>Quantidade: {orderProduct.quantity}</p>
-                                                    <p>R$ {orderProduct.product.basePrice}</p>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        )
-                    })
+                    orders.map((order) => (
+                        <OrderItem key={order.id} order={order} />
+                    ))
                 }
             </div>
         </div>
