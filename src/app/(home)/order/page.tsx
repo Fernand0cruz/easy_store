@@ -3,7 +3,7 @@ import { authOptions } from "@/lib/auth";
 import { prismaClient } from "@/lib/prisma";
 import { PackageSearchIcon } from "lucide-react";
 import { getServerSession } from "next-auth";
-import OrderItem from "./components/order-otem";
+import OrderItem from "./components/order-item";
 
 
 const PageOrder = async () => {
