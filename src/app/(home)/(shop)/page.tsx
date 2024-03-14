@@ -38,7 +38,7 @@ export default async function Home() {
     <div>
       <div className="m-5">
         <Link href={"offers"}>
-          <PromotionalBanner src={"/banner_1.png"} alt="" />
+          <PromotionalBanner src={"/banner_1.png"} alt="banner_1.png" />
         </Link>
       </div>
 
@@ -53,7 +53,7 @@ export default async function Home() {
 
       <div className="mx-5">
         <Link href={"/category/keyboards"}>
-          <PromotionalBanner src={"/banner_2.png"} alt="" />
+          <PromotionalBanner src={"/banner_2.png"} alt="banner_2.png" />
         </Link>
       </div>
 
@@ -64,7 +64,7 @@ export default async function Home() {
 
       <div className="mx-5">
         <Link href={"/category/mouses"}>
-          <PromotionalBanner src={"/banner_3.png"} alt="" />
+          <PromotionalBanner src={"/banner_3.png"} alt="banner_3.png" />
         </Link>
       </div>
 
@@ -75,7 +75,7 @@ export default async function Home() {
 
       <div className="mx-5">
         <Link href={"/category/headphones"}>
-          <PromotionalBanner src={"/banner_4.png"} alt="" />
+          <PromotionalBanner src={"/banner_4.png"} alt="banner_4.png" />
         </Link>
       </div>
 

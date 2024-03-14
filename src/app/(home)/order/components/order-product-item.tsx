@@ -22,6 +22,7 @@ const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
                     height={0}
                     sizes="100vw"
                     className="h-auto max-h-[80%] w-auto max-w-[80%] object-contain"
+                    loading="lazy"
                 />
             </div>
             <div className="flex flex-col gap-2">

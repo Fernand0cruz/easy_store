@@ -21,6 +21,7 @@ const ProductImage = ({ imageUrls, name }: ProductImagesProps) => {
                     height={0}
                     sizes="100vw"
                     className='h-auto w-auto max-h-[70%] max-w-[80%] object-contain'
+                    loading="lazy"
                 />
             </div>
             <div>
@@ -42,6 +43,7 @@ const ProductImage = ({ imageUrls, name }: ProductImagesProps) => {
                                     height={0}
                                     sizes="100vw"
                                     className='h-auto w-auto max-h-[70%] max-w-[80%]'
+                                    loading="lazy"
                                 />
                             </button>
                         ))

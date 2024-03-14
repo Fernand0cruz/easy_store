@@ -29,6 +29,7 @@ const CartItem = ({ product }: CartItemProps) => {
                         alt={product.name}
                         sizes="100vw"
                         className="h-auto max-h-[70%] w-auto max-w-[80%] rounded-lg"
+                        loading="lazy"
                     />
                 </div>
                 <div className="flex flex-col">

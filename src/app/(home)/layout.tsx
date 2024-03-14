@@ -22,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <link rel='icon' sizes='any' href='/ico.png'/>
         <div className='flex h-full flex-col'>
           <AuthProvider>
             <CartProvider>

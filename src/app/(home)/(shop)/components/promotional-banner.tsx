@@ -13,6 +13,7 @@ const PromotionalBanner = ({ src, alt }: PromotionalBannerProps) => {
                 height={0}
                 sizes="100vw"
                 className="h-auto w-full rounded-lg"
+                loading="lazy"
             />
     );
 }

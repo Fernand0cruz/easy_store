@@ -20,6 +20,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
                         height={0}
                         sizes="100vw"
                         className="w-auto h-auto max-w-[80%] max-h-[70%] object-contain"
+                        loading="lazy"
                     />
                     {
                         product.discountPercentage > 0 && (
