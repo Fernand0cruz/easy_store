@@ -12,7 +12,10 @@ const productHorizontalList = ({ products }: ProductListProps) => {
       {
         products.map(product =>
           <div key={product.id} className="w-[170px] max-w-[170px]">
-            <ProductItem product={computeProductTotalPrice(product)} />
+            <ProductItem product={{
+              ...product,
+              totalPrice: computeProductTotalPrice(product),
+            }} />
           </div>
         )
       }

@@ -26,16 +26,17 @@ const OrderItem = ({ order }: OrderItemProps) => {
         }, 0);
     }, [order.orderProducts]);
 
-    const total = useMemo(() => {
-        return order.orderProducts.reduce((acc, product) => {
-            const productWithTotalPrice = computeProductTotalPrice(product.product);
-            return acc + productWithTotalPrice.totalPrice * product.quantity;
-        }, 0);
-    }, [order.orderProducts]);
+    // const total = useMemo(() => {
+    //     return order.orderProducts.reduce((acc, product) => {
+    //       const productWithTotalPrice = computeProductTotalPrice(product.product);
 
-    const totalDiscount = useMemo(() => {
-        return subtotal - total;
-    }, [subtotal, total]);
+    //       return acc + productWithTotalPrice.totalPrice * product.quantity;
+    //     }, 0);
+    //   }, [order.orderProducts]);
+
+    // const totalDiscount = useMemo(() => {
+    //     return subtotal - total;
+    // }, [subtotal, total]);
 
     return (
         <Card className="px-5">
@@ -82,12 +83,12 @@ const OrderItem = ({ order }: OrderItemProps) => {
                                 <Separator/>
                                 <div className="flex w-full justify-between py-3">
                                     <p>Descontos</p>
-                                    <p>-R$ {totalDiscount.toFixed(2)}</p>
+                                    {/* <p>-R$ {totalDiscount.toFixed(2)}</p> */}
                                 </div>
                                 <Separator/>
                                 <div className="flex w-full justify-between py-3 font-bold">
                                     <p>Total</p>
-                                    <p>R$ {total.toFixed(2)}</p>
+                                    {/* <p>R$ {total.toFixed(2)}</p> */}
                                 </div>
                                
                             </div>

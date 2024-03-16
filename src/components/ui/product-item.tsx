@@ -1,5 +1,4 @@
 import { ProductWithTotalPrice } from "@/helpers/product";
-import { Product } from "@prisma/client";
 import { Badge } from "./badge";
 import { ArrowDownIcon } from "lucide-react";
 import Link from "next/link";

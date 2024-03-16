@@ -11,7 +11,7 @@ interface OrderProductItemProps {
 }
 
 const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
-    const productWithTotalPrice = computeProductTotalPrice(orderProduct.product);
+    // const productWithTotalPrice = computeProductTotalPrice(orderProduct.product);
     return ( 
         <div className="flex items-center gap-4">
             <div className="bg-accent w-[77px] h-[77px] flex items-center justify-center rounded-md">
@@ -28,13 +28,13 @@ const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
             <div className="flex flex-col gap-2">
                 <p className="text-xs">{orderProduct.product.name}</p>
                 <div className="flex items-center">
-                    <p className="text-sm font-bold">R${productWithTotalPrice.totalPrice.toFixed(2)}</p>
+                    {/* <p className="text-sm font-bold">R${productWithTotalPrice.totalPrice.toFixed(2)}</p>
                     {
                         productWithTotalPrice.discountPercentage
                          > 0 && (
                             <p className="opacity-75 line-through text-xs">R${productWithTotalPrice.basePrice.toFixed(2)}</p>
                         )
-                    }
+                    } */}
                 </div>
                 <p>Qtd: {orderProduct.quantity}</p>
             </div>
