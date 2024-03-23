@@ -10,7 +10,7 @@ const PageOrder = async () => {
     const session = await getServerSession(authOptions)
     if (!session || !session.user) {
         return (
-            <div className="flex w-full flex-col items-center justify-center py-8">
+            <div className="flex w-full h-full flex-col items-center justify-center py-8">
                 <h1 className=" text-4xl">Sem autorização</h1>
                 <p>Faça Login para ver essa página</p>
             </div>
