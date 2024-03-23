@@ -35,13 +35,13 @@ export default async function Home() {
     }
   })
   return (
-    <div>
-      <div className="m-5">
+    <div className="mx-auto max-w-[1920px] ">
+      <div className="mb-5">
         <Link href={"offers"}>
           <PromotionalBanner src={"/banner_1.png"} alt="banner_1.png" />
         </Link>
       </div>
-
+      
       <div className="mx-5">
         <Categories />
       </div>
@@ -51,7 +51,7 @@ export default async function Home() {
         <ProductList products={deals} />
       </div>
 
-      <div className="mx-5">
+      <div>
         <Link href={"/category/keyboards"}>
           <PromotionalBanner src={"/banner_2.png"} alt="banner_2.png" />
         </Link>
@@ -62,7 +62,7 @@ export default async function Home() {
         <ProductList products={keyboards} />
       </div>
 
-      <div className="mx-5">
+      <div>
         <Link href={"/category/mouses"}>
           <PromotionalBanner src={"/banner_3.png"} alt="banner_3.png" />
         </Link>
@@ -73,7 +73,7 @@ export default async function Home() {
         <ProductList products={mouses} />
       </div>
 
-      <div className="mx-5">
+      <div>
         <Link href={"/category/headphones"}>
           <PromotionalBanner src={"/banner_4.png"} alt="banner_4.png" />
         </Link>
