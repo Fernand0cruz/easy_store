@@ -9,9 +9,9 @@ interface ProductItemProps {
 
 const ProductItem = ({ product }: ProductItemProps) => {
     return (
-        <Link href={`/product/${product.slug}`}>
+        <Link href={`/product/${product.slug}`} className="flex">
             <div className="flex flex-col w-full gap-4 min-w-[160px]">
-                <div className="bg-[#292929] rounded-lg h-[170px] w-full flex items-center justify-center relative">
+                <div className="bg-[#292929] rounded-lg h-[170px] w-full flex items-center justify-center relative lg:h-[200px] lg:w-[200px]">
                     <Image
                         src={product.imgUrls[0]}
                         alt={product.name}
