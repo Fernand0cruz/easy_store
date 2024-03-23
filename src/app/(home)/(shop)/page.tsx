@@ -42,7 +42,7 @@ export default async function Home() {
         </Link>
       </div>
       
-      <div className="mx-5">
+      <div>
         <Categories />
       </div>
 
