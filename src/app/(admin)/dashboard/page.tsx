@@ -44,7 +44,7 @@ export default async function PageDashboard() {
         )
     } else {
         return (
-            <div className="flex w-full flex-col items-center justify-center py-8">
+            <div className="flex w-full h-full flex-col items-center justify-center py-8">
                 <h1 className=" text-4xl">Sem autorização</h1>
                 <p>Página de ADMINISTRADOR faça login com seu email de admin para ter acesso</p>
             </div>
