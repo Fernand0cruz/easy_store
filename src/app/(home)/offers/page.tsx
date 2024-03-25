@@ -66,76 +66,78 @@ export default async function Offers() {
         },
     });
     return (
-        <div className="flex flex-col gap-8 mb-8">
-            <div className="m-5">
+        <div className="flex flex-col gap-8 mb-5 max-w-[1920px] m-auto">
+            <div className="mt-5">
                 <PromotionalBanner src={"/banner_1.png"} alt="" />
             </div>
-            {
-                mouses.length > 0 && (
-                    <div className="flex flex-col gap-5">
-                        <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit mx-5" variant={"outline"}>
-                            <MouseIcon />
-                            Mouses em Promoção
-                        </Badge>
-                        <ProductList products={mouses} />
-                    </div>
-                )
-            }
-            {
-                keyboards.length > 0 && (
-                    <div className="flex flex-col gap-5">
-                        <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit mx-5" variant={"outline"}>
-                            <KeyboardIcon />
-                            Teclados em Promoção
-                        </Badge>
-                        <ProductList products={keyboards} />
-                    </div>
-                )
-            }
-            {
-                headphones.length > 0 && (
-                    <div className="flex flex-col gap-5">
-                        <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit mx-5" variant={"outline"}>
-                            <HeadphonesIcon />
-                            Headphones em Promoção
-                        </Badge>
-                        <ProductList products={headphones} />
-                    </div>
-                )
-            }
-            {
-                mousepads.length > 0 && (
-                    <div className="flex flex-col gap-5">
-                        <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit mx-5" variant={"outline"}>
-                            <MousePointerSquare />
-                            Mousepads em Promoção
-                        </Badge>
-                        <ProductList products={mousepads} />
-                    </div>
-                )
-            }
-            {
-                monitors.length > 0 && (
-                    <div className="flex flex-col gap-5">
-                        <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit mx-5" variant={"outline"}>
-                            <Monitor />
-                            Monitores em Promoção
-                        </Badge>
-                        <ProductList products={monitors} />
-                    </div>
-                )
-            }
-            {
-                speakers.length > 0 && (
-                    <div className="flex flex-col gap-5">
-                        <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit mx-5" variant={"outline"}>
-                            <SpeakerIcon />
-                            Speakers em Promoção
-                        </Badge>
-                        <ProductList products={speakers} />
-                    </div>
-                )
-            }
+            <div className="flex flex-col gap-5 mx-5">
+                {
+                    mouses.length > 0 && (
+                        <div className="flex flex-col gap-5">
+                            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit" variant={"outline"}>
+                                <MouseIcon />
+                                Mouses em Promoção
+                            </Badge>
+                            <ProductList products={mouses} />
+                        </div>
+                    )
+                }
+                {
+                    keyboards.length > 0 && (
+                        <div className="flex flex-col gap-5">
+                            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit" variant={"outline"}>
+                                <KeyboardIcon />
+                                Teclados em Promoção
+                            </Badge>
+                            <ProductList products={keyboards} />
+                        </div>
+                    )
+                }
+                {
+                    headphones.length > 0 && (
+                        <div className="flex flex-col gap-5">
+                            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit" variant={"outline"}>
+                                <HeadphonesIcon />
+                                Headphones em Promoção
+                            </Badge>
+                            <ProductList products={headphones} />
+                        </div>
+                    )
+                }
+                {
+                    mousepads.length > 0 && (
+                        <div className="flex flex-col gap-5">
+                            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit" variant={"outline"}>
+                                <MousePointerSquare />
+                                Mousepads em Promoção
+                            </Badge>
+                            <ProductList products={mousepads} />
+                        </div>
+                    )
+                }
+                {
+                    monitors.length > 0 && (
+                        <div className="flex flex-col gap-5">
+                            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit" variant={"outline"}>
+                                <Monitor />
+                                Monitores em Promoção
+                            </Badge>
+                            <ProductList products={monitors} />
+                        </div>
+                    )
+                }
+                {
+                    speakers.length > 0 && (
+                        <div className="flex flex-col gap-5">
+                            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit" variant={"outline"}>
+                                <SpeakerIcon />
+                                Speakers em Promoção
+                            </Badge>
+                            <ProductList products={speakers} />
+                        </div>
+                    )
+                }
+            </div>
         </div>
     );
 }
