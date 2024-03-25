@@ -6,12 +6,12 @@ import { prismaClient } from "@/lib/prisma";
 const CatalogPage = async () => {
     const categories = await prismaClient.category.findMany({});
     return (
-        <div className="flex flex-col gap-8 p-5">
-            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit" variant={"outline"}>
+        <div className="flex flex-col max-w-[1920px] m-auto">
+            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit m-5" variant={"outline"}>
                 <ShapesIcon />
                 Catálogo
             </Badge>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-5 mx-5">
                 {categories.map((category) => (
                     <CategoryItens key={category.id} category={category} />
                 ))}

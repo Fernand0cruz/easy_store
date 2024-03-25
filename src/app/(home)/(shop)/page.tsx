@@ -45,7 +45,7 @@ export default async function Home() {
         <div>
           <Categories />
         </div>
-
+        
         <div className="my-5">
           <SectionTittle>Ofertas</SectionTittle>
           <ProductList products={deals} />
