@@ -27,17 +27,18 @@ const ProductDetailsPage = async ({ params: { slug } }: ProductDetailsPageProps)
                 }
             }
         }
-
     })
     if (!product) return null
     return (
-        <div className="flex flex-col gap-8 pb-8">
-            <ProductImage imageUrls={product.imgUrls} name={product.name} />
-            <ProductInfo product={{
-                ...product,
-                totalPrice: computeProductTotalPrice(product),
-            }} />
-            <div>
+        <div className="flex flex-col gap-5 pb-5 max-w-[1920px] m-auto">
+            <div className="flex flex-col gap-5 lg:flex-row lg:mx-5">
+                <ProductImage imageUrls={product.imgUrls} name={product.name} />
+                <ProductInfo product={{
+                    ...product,
+                    totalPrice: computeProductTotalPrice(product),
+                }} />
+            </div>
+            <div className="flex flex-col gap-5 mx-5">
                 <SectionTittle>Produtos semelhantes</SectionTittle>
                 <ProductList products={product.category.products} />
             </div>

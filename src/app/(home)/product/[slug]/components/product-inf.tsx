@@ -30,8 +30,8 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
     }
 
     return (
-        <div className="flex flex-col px-5">
-            <h2 className="text-lg">{product.name}</h2>
+        <div className="flex flex-col px-5 gap-5 lg:w-2/5 lg:my-5 lg:rounded-lg lg:bg-accent lg:p-10">
+            <h2 className="text-lg lg:text-2xl">{product.name}</h2>
             <div className="flex items-center gap-1">
                 <h1>R$ {product.totalPrice.toFixed(2)}</h1>
                 {
@@ -44,10 +44,10 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
             </div>
             {
                 product.discountPercentage > 0 && (
-                    <p className="text-xs opacity-75 line-through">R$ {product.basePrice.toFixed(2)}</p>
+                    <p className="text-xs opacity-75 line-through lg:text-base">R$ {product.basePrice.toFixed(2)}</p>
                 )
             }
-            <div className="flex items-center gap-2 mt-2">
+            <div className="flex items-center gap-2">
                 <Button size={"icon"} variant={"outline"} onClick={handleQuantityDecrease}>
                     <ArrowLeftIcon size={16} />
                 </Button>
@@ -56,11 +56,12 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
                     <ArrowRightIcon size={16} />
                 </Button>
             </div>
-            <div className="flex flex-col gap-3 mt-8">
+            <div className="flex flex-col gap-3">
                 <h3 className="font-bold">Descrição</h3>
                 <p className="text-sm opacity-75 text-justify">{product.description}</p>
             </div>
-            <Button className="mt-8 uppercase font-bold" onClick={handleClickAddToCart}>Adicionar ao carrinho</Button>
+            <p className="">FRETE GRATIS</p>
+            <Button className="uppercase font-bold" onClick={handleClickAddToCart}>Adicionar ao carrinho</Button>
         </div>
     )
 }
