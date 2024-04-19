@@ -30,7 +30,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
     }
 
     return (
-        <div className="flex flex-col px-5 gap-5 lg:w-2/5 lg:my-5 lg:rounded-lg lg:bg-accent lg:p-10">
+        <div className="flex flex-col px-5 gap-5 lg:w-2/5 lg:my-5 lg:rounded-lg lg:p-10">
             <h2 className="text-lg lg:text-2xl">{product.name}</h2>
             <div className="flex items-center gap-1">
                 <h1>R$ {product.totalPrice.toFixed(2)}</h1>
