@@ -19,7 +19,7 @@ const CategoryProducts = async ({ params }: any) => {
                 {CATEGORY_ICON[params.slug as keyof typeof CATEGORY_ICON]}
                 {category?.name}
             </Badge>
-            <div className="flex flex-wrap gap-5 justify-between">
+            <div className="flex flex-wrap gap-5 justify-center">
                 {
                     category?.products.map((product) => (
                         <div key={product.id} className="w-[170px] lg:w-[200px] lg:min-w-[200px]">
