@@ -1,23 +1,39 @@
-import { CartContext, CartProduct } from "@/providers/cart";
+import { 
+    CartContext, 
+    CartProduct 
+} from "@/providers/cart";
 import { Button } from "./button";
 import Image from "next/image";
-import { ArrowLeftIcon, ArrowRightIcon, TrashIcon } from "lucide-react";
+import { 
+    ArrowLeftIcon, 
+    ArrowRightIcon, 
+    TrashIcon 
+} from "lucide-react";
 import { useContext } from "react";
 
 interface CartItemProps {
     product: CartProduct;
 }
 const CartItem = ({ product }: CartItemProps) => {
-    const { decreaseProductQuantity, increaseProductQuantity, removeProductFromCart } = useContext(CartContext)
+
+    // Obtém as funções de contexto para manipulação do carrinho
+    const { decreaseProductQuantity, increaseProductQuantity, removeProductFromCart } = useContext(CartContext);
+
+    // Função para lidar com o clique para diminuir a quantidade do produto no carrinho
     const handleDecreaseProductQuantityClick = () => {
-        decreaseProductQuantity(product.id)
-    }
+        decreaseProductQuantity(product.id); // Chama a função para diminuir a quantidade do produto específico
+    };
+
+    // Função para lidar com o clique para aumentar a quantidade do produto no carrinho
     const handleIncleaseProductQuantityClick = () => {
-        increaseProductQuantity(product.id)
-    }
+        increaseProductQuantity(product.id); // Chama a função para aumentar a quantidade do produto específico
+    };
+
+    // Função para lidar com o clique para remover o produto do carrinho
     const handleRemoveProductFromCartClick = () => {
-        removeProductFromCart(product.id)
-    }
+        removeProductFromCart(product.id); // Chama a função para remover o produto específico do carrinho
+    };
+
     return (
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -54,10 +70,9 @@ const CartItem = ({ product }: CartItemProps) => {
                 </div>
             </div>
             <Button variant={"outline"} size="icon" onClick={handleRemoveProductFromCartClick}>
-                <TrashIcon size={16}/>
+                <TrashIcon size={16} />
             </Button>
         </div>
     );
 }
-
 export default CartItem;
