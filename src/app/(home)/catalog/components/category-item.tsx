@@ -1,10 +1,13 @@
 import { Category } from "@prisma/client"
 import Link from "next/link"
 import Image from "next/image"
+
 interface CategoryItensProps {
     category: Category
 }
+
 const CategoryItens = ({ category }: CategoryItensProps) => {
+
     return (
         <Link href={`/category/${category.slug}`}>
         <div className="flex flex-col">
@@ -26,5 +29,4 @@ const CategoryItens = ({ category }: CategoryItensProps) => {
         </Link>
     );
 }
-
 export default CategoryItens;
