@@ -1,5 +1,5 @@
 import { computeProductTotalPrice } from "@/helpers/product";
-import { OrderProduct, Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import Image from "next/image";
 
 interface OrderProductItemProps {
@@ -11,7 +11,9 @@ interface OrderProductItemProps {
 }
 
 const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
+
     const productWithTotalPrice = computeProductTotalPrice(orderProduct.product);
+    
     return ( 
         <div className="flex items-center gap-4">
             <div className="bg-accent w-[77px] h-[77px] flex items-center justify-center rounded-md">
@@ -41,5 +43,4 @@ const OrderProductItem = ({ orderProduct }: OrderProductItemProps) => {
         </div>   
     );
 }
-
 export default OrderProductItem;
