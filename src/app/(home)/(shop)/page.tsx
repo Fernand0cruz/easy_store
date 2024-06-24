@@ -46,7 +46,7 @@ export default async function Home() {
 
   return (
     <div className="max-w-screen-xl mx-auto">
-      <div className="flex flex-col gap-5 mb-5">
+      <div className="flex flex-col gap-5">
         <Link href={"offers"}>
           <PromotionalBanner src={"/banner_1.png"} alt="banner_1.png" />
         </Link>
