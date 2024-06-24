@@ -1,28 +1,34 @@
 import { prismaClient } from "@/lib/prisma";
 import ProductItem from "@/components/ui/product-item";
 import { computeProductTotalPrice } from "@/helpers/product";
-import { Badge } from "@/components/ui/badge";
 import { CATEGORY_ICON } from "@/constants/category-icons";
+import SectionTittle from "@/components/ui/section-tittle";
+import { Card } from "@/components/ui/card";
 
 const CategoryProducts = async ({ params }: any) => {
+    // Busca a categoria e seus produtos associados do banco de dados usando o slug fornecido
     const category = await prismaClient.category.findFirst({
         where: {
             slug: params.slug
         },
         include: {
-            products: true
+            products: true // Inclui os produtos associados à categoria
         }
     })
+
     return (
-        <div className="p-5 flex flex-col gap-5 max-w-[1920px] m-auto">
-            <Badge className="gap-1 text-base uppercase border-primary py-[0.365rem] border-2 w-fit" variant={"outline"}>
+        <Card className="flex flex-col mt-8 max-w-screen-xl mx-auto py-4 px-2">
+            <div className="flex gap-2">
                 {CATEGORY_ICON[params.slug as keyof typeof CATEGORY_ICON]}
-                {category?.name}
-            </Badge>
-            <div className="flex flex-wrap gap-5 justify-center">
+                <SectionTittle>
+                    {category?.name}
+                </SectionTittle>
+            </div>
+            <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+                
                 {
                     category?.products.map((product) => (
-                        <div key={product.id} className="w-[170px] lg:w-[200px] lg:min-w-[200px]">
+                        <div key={product.id}>
                             <ProductItem
                                 key={product.id}
                                 product={{
@@ -33,9 +39,9 @@ const CategoryProducts = async ({ params }: any) => {
                         </div>
                     ))
                 }
+                
             </div>
-        </div>
+        </Card>
     );
 }
-
 export default CategoryProducts;
