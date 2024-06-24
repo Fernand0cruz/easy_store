@@ -17,7 +17,7 @@ const ProductHorizontalList = ({ products }: ProductListProps) => {
 
     // Faz um map sobre o array de produtos e renderiza cada produto até o comprimento especificado
     return products.slice(0, length).map((product) => (
-      <div key={product.id} className="w-[33.3%] md:w-[25%] lg:w-[16.6%]">
+      <div key={product.id}>
         <ProductItem
           product={{
             ...product,
@@ -34,7 +34,7 @@ const ProductHorizontalList = ({ products }: ProductListProps) => {
 
         {
           products.map(product =>
-            <div key={product.id} className="w-[170px] lg:w-[200px] lg:min-w-[200px]">
+            <div key={product.id} className="">
               <ProductItem product={{
                 ...product,
                 totalPrice: computeProductTotalPrice(product),
@@ -45,21 +45,21 @@ const ProductHorizontalList = ({ products }: ProductListProps) => {
 
       </div>
       {/* Visualização para tablets pequenos: layout flexível */}
-      <div className="hidden sm:flex gap-2 md:hidden">
+      <div className="hidden md:hidden sm:grid sm:grid-cols-3 sm:gap-2">
 
         {renderProductList(products, 3)} {/* Renderiza até 3 produtos */}
 
       </div>
 
       {/* Visualização para tablets maiores: layout flexível */}
-      <div className="hidden md:flex gap-2 lg:hidden">
+      <div className="hidden lg:hidden md:grid md:grid-cols-4 md:gap-2">
 
         {renderProductList(products, 4)} {/* Renderiza até 4 produtos */}
 
       </div>
 
       {/* Visualização para desktops: layout flexível */}
-      <div className="hidden lg:flex gap-2">
+      <div className="hidden lg:grid lg:grid-cols-6 lg:gap-2">
 
         {renderProductList(products, 6)} {/* Renderiza até 6 produtos */}
 

@@ -11,8 +11,8 @@ interface ProductItemProps {
 const ProductItem = ({ product }: ProductItemProps) => {
     return (
         <Link href={`/product/${product.slug}`} className="flex" aria-label={`View details for ${product.name}`}>
-            <div className="flex flex-col gap-2 w-full min-w-[170px]">
-                <div className="rounded-lg border hover:bg-accent h-[185px] w-full flex items-center justify-center relative">
+            <div className="flex flex-col gap-2 w-full min-w-[165px]">
+                <div className="rounded-lg border hover:bg-accent h-[200px] w-full flex items-center justify-center relative">
                     <Image
                         src={product.imgUrls[0]}
                         alt={product.name}
