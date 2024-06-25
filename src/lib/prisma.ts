@@ -1,16 +1,20 @@
 import { PrismaClient } from "@prisma/client";
-
+// Declarar a variável global com o tipo PrismaClient
 declare global {
-    var cachedPrisma: PrismaClient
+    var cachedPrisma: PrismaClient | undefined;
 }
-let prisma: PrismaClient
-if(process.env.NODE_ENV === "production") {
-    prisma = new PrismaClient()
+// Usar let para permitir a reatribuição
+let prisma: PrismaClient;
+// Verificar o ambiente de execução
+if (process.env.NODE_ENV === "production") {
+    // Em produção, criar um novo PrismaClient
+    prisma = new PrismaClient();
 } else {
+    // Em desenvolvimento, reutilizar o PrismaClient existente
     if (!global.cachedPrisma) {
-        global.cachedPrisma = new PrismaClient()
+        global.cachedPrisma = new PrismaClient();
     }
-    prisma = global.cachedPrisma
+    prisma = global.cachedPrisma;
 }
-
-export const prismaClient = prisma
+// Exportar o prismaClient para uso em outros módulos
+export const prismaClient = prisma;

@@ -5,22 +5,22 @@ import GoogleProvider from "next-auth/providers/google";
 
 
 export const authOptions: AuthOptions = {
-
-    adapter: PrismaAdapter(prismaClient),
+    adapter: PrismaAdapter(prismaClient), // Configura o adaptador Prisma
     providers: [
         GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            clientId: process.env.GOOGLE_CLIENT_ID as string, // ID do cliente Google
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string, // Segredo do cliente Google
         }),
     ],
     callbacks: {
-        async session({ session, token, user}) {
-            session.user = {...session.user, id: user.id} as {
+        async session({ session, user }) {
+            // Adiciona o ID do usuário à sessão
+            session.user = { ...session.user, id: user.id } as {
                 id: string;
                 name: string;
                 email: string;
-            }
-            return session
-        }
+            };
+            return session; // Retorna a sessão modificada
+        },
     },
-}
+};
