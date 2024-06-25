@@ -16,7 +16,6 @@ interface CartItemProps {
     product: CartProduct;
 }
 const CartItem = ({ product }: CartItemProps) => {
-
     // Obtém as funções de contexto para manipulação do carrinho
     const { decreaseProductQuantity, increaseProductQuantity, removeProductFromCart } = useContext(CartContext);
 
@@ -44,7 +43,6 @@ const CartItem = ({ product }: CartItemProps) => {
                         width={70}
                         height={70}
                         alt={product.name}
-                        sizes="100vw"
                         className="h-auto max-h-[70%] w-auto max-w-[80%] rounded-lg"
                     />
                 </div>

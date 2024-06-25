@@ -31,7 +31,7 @@ const PageOrder = async () => {
     })
     
     return (
-        <div className="max-w-screen-xl m-auto mt-9">
+        <div className="max-w-screen-xl m-auto mt-5">
             <div className="flex gap-2">
                 <PackageSearchIcon />
                 <span>Meus Pedidos</span>

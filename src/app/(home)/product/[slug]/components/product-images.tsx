@@ -21,11 +21,10 @@ const ProductImage = ({ imageUrls, name }: ProductImagesProps) => {
                 <Image 
                     src={currentImage}
                     alt={name}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
+                    width={500}
+                    height={500}
                     className='h-auto w-auto max-h-[70%] max-w-[80%] object-contain'
-                    loading="lazy"
+                    quality={100}
                 />
             </div>
             <div>
@@ -43,11 +42,9 @@ const ProductImage = ({ imageUrls, name }: ProductImagesProps) => {
                                 <Image 
                                     src={imageUrls} 
                                     alt={name}
-                                    width={0}
-                                    height={0}
-                                    sizes="100vw"
+                                    width={50}
+                                    height={50}
                                     className='h-auto w-auto max-h-[70%] max-w-[80%]'
-                                    loading="lazy"
                                 />
                             </button>
                         ))

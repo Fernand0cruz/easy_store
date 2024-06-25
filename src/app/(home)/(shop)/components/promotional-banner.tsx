@@ -13,6 +13,7 @@ const PromotionalBanner = ({ src, alt }: PromotionalBannerProps) => {
             width={1280}
             height={415}
             className="h-auto w-full"
+            quality={100}
         />
     );
 }

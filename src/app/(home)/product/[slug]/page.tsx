@@ -42,8 +42,8 @@ const ProductDetailsPage = async ({ params: { slug } }: ProductDetailsPageProps)
     }
 
     return (
-        <div className="flex flex-col gap-5 max-w-screen-xl mx-auto">
-            <Card className="flex flex-col gap-5 mt-5 p-2 py-5 lg:flex-row">
+        <div className="flex flex-col gap-5 mt-5 max-w-screen-xl mx-auto">
+            <Card className="flex flex-col gap-2 px-2 py-5 lg:flex-row">
                 <ProductImage imageUrls={product.imgUrls} name={product.name} />
                 <ProductInfo product={{
                     ...product,

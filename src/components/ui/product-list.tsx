@@ -7,7 +7,6 @@ interface ProductListProps {
 }
 
 const ProductHorizontalList = ({ products }: ProductListProps) => {
-
   // Função auxiliar para renderizar uma lista de produtos com um comprimento especificado
   const renderProductList = (products: Product[], length: number) => {
     // Verifica se há produtos disponíveis
@@ -34,7 +33,7 @@ const ProductHorizontalList = ({ products }: ProductListProps) => {
 
         {
           products.map(product =>
-            <div key={product.id} className="">
+            <div key={product.id} className="min-w-[200px]">
               <ProductItem product={{
                 ...product,
                 totalPrice: computeProductTotalPrice(product),
@@ -50,14 +49,12 @@ const ProductHorizontalList = ({ products }: ProductListProps) => {
         {renderProductList(products, 3)} {/* Renderiza até 3 produtos */}
 
       </div>
-
       {/* Visualização para tablets maiores: layout flexível */}
       <div className="hidden lg:hidden md:grid md:grid-cols-4 md:gap-2">
 
         {renderProductList(products, 4)} {/* Renderiza até 4 produtos */}
 
       </div>
-
       {/* Visualização para desktops: layout flexível */}
       <div className="hidden lg:grid lg:grid-cols-6 lg:gap-2">
 

@@ -1,8 +1,16 @@
 "use client"
 import { ProductWithTotalPrice } from "@/helpers/product";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, CarIcon } from "lucide-react";
-import { useState, useContext } from "react";
+import { 
+    ArrowDownIcon, 
+    ArrowLeftIcon, 
+    ArrowRightIcon, 
+    CarIcon 
+} from "lucide-react";
+import { 
+    useState, 
+    useContext 
+} from "react";
 import { Button } from "@/components/ui/button";
 import { CartContext } from "@/providers/cart";
 
@@ -10,9 +18,7 @@ interface ProductInfoProps {
     product: ProductWithTotalPrice
 }
 const ProductInfo = ({ product }: ProductInfoProps) => {
-
     const [quantity, setQuantity] = useState<number>(1); // Define o estado inicial da quantidade do produto
-
     const { addProductToCart } = useContext(CartContext); // Usa o contexto do carrinho para adicionar produtos
 
     // Função para aumentar a quantidade do produto
@@ -67,7 +73,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
                     <ArrowRightIcon size={16} />
                 </Button>
             </div>
-            <div className="flex flex-1 flex-col gap-3">
+            <div className="flex flex-1 flex-col gap-2">
                 <h3 className="uppercase">Descrição</h3>
                 <p className="text-sm opacity-75 text-justify">{product.description}</p>
             </div>
@@ -75,7 +81,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
                 <CarIcon />
                 <span>FRETE GRÁTIS</span>
             </div>
-            <Button className="uppercase font-bold" onClick={handleClickAddToCart}>Adicionar ao carrinho</Button>
+            <Button className="uppercase font-bold rounded-none" onClick={handleClickAddToCart}>Adicionar ao carrinho</Button>
         </div>
     )
 }

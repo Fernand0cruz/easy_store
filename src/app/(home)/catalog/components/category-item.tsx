@@ -7,7 +7,6 @@ interface CategoryItensProps {
 }
 
 const CategoryItens = ({ category }: CategoryItensProps) => {
-
     return (
         <Link href={`/category/${category.slug}`}>
         <div className="flex flex-col">
@@ -15,14 +14,13 @@ const CategoryItens = ({ category }: CategoryItensProps) => {
                 <Image 
                     src={category.imgUrl} 
                     alt={category.name} 
-                    width={0} 
-                    height={0} 
-                    sizes="100vw" 
+                    width={100} 
+                    height={100}  
                     className="h-auto max-h-[70%] w-auto max-w-[80%] object-contain" 
-                    loading="lazy"
+                    quality={100}
                 />
             </div>
-            <div className="bg-accent py-3 rounded-br-lg rounded-bl-lg">
+            <div className="bg-accent py-5 rounded-br-lg rounded-bl-lg">
                 <p className="text-center text-sm font-semibold">{category.name}</p>
             </div>
         </div>

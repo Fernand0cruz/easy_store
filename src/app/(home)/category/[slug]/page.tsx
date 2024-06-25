@@ -17,14 +17,14 @@ const CategoryProducts = async ({ params }: any) => {
     })
 
     return (
-        <Card className="flex flex-col mt-8 max-w-screen-xl mx-auto py-4 px-2">
+        <Card className="flex flex-col mt-5 max-w-screen-xl mx-auto py-5 px-2">
             <div className="flex gap-2">
                 {CATEGORY_ICON[params.slug as keyof typeof CATEGORY_ICON]}
                 <SectionTittle>
                     {category?.name}
                 </SectionTittle>
             </div>
-            <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            <div className="grid gap-2 gap-y-5 grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                 
                 {
                     category?.products.map((product) => (

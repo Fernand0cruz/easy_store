@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import {
     ArrowRightFromLineIcon,
     HeadphonesIcon,
@@ -43,13 +42,13 @@ export default async function Offers() {
     );
 
     return (
-        <div className="flex flex-col gap-5 mb-5 max-w-screen-xl mx-auto">
+        <div className="flex flex-col gap-5 max-w-screen-xl mx-auto">
             <PromotionalBanner src={"/banner_1.png"} alt="Promoção" />
             <div className="flex flex-col gap-5">
                 {/* Itera sobre cada categoria e renderiza os produtos */}
                 {categoryProducts.map(({ slug, icon: Icon, label, products }) => (
                     products.length > 0 && (
-                        <Card key={slug} className="flex flex-col gap-5 py-4 px-2">
+                        <Card key={slug} className="flex flex-col py-5 px-2">
                             <div className="flex justify-between">
                                 <div className="flex gap-2">
                                     <Icon />
@@ -58,7 +57,7 @@ export default async function Offers() {
                                     </SectionTittle>
                                 </div>
                                 <Link href={`/category/${slug}`} className="hidden sm:flex">
-                                    <p className="uppercase font-bold flex">ver mais<ArrowRightFromLineIcon /></p>
+                                    <p className="uppercase flex gap-2">ver mais<ArrowRightFromLineIcon /></p>
                                 </Link>
                             </div>
                             <ProductList products={products} />

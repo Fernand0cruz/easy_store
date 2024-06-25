@@ -10,17 +10,16 @@ interface ProductItemProps {
 
 const ProductItem = ({ product }: ProductItemProps) => {
     return (
-        <Link href={`/product/${product.slug}`} className="flex" aria-label={`View details for ${product.name}`}>
+        <Link href={`/product/${product.slug}`} className="flex">
             <div className="flex flex-col gap-2 w-full min-w-[165px]">
                 <div className="rounded-lg border hover:bg-accent h-[200px] w-full flex items-center justify-center relative">
                     <Image
                         src={product.imgUrls[0]}
                         alt={product.name}
-                        width={0}
-                        height={0}
-                        sizes="100vw"
+                        width={100}
+                        height={100}
+                        quality={100}
                         className="w-auto h-auto max-w-[80%] max-h-[70%] object-contain"
-                        loading="lazy"
                     />
                     
                     {
