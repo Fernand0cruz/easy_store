@@ -10,6 +10,7 @@ import {
     TrashIcon 
 } from "lucide-react";
 import { useContext } from "react";
+import { Card } from "./card";
 
 interface CartItemProps {
     product: CartProduct;
@@ -35,17 +36,16 @@ const CartItem = ({ product }: CartItemProps) => {
     };
 
     return (
-        <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-                <div className="bg-accent flex items-center justify-center rounded-lg w-[77px] h-[77px]">
+        <Card className="flex items-center justify-between p-2">
+            <div className="flex items-center gap-2">
+                <div className="bg-accent flex items-center justify-center w-[77px] h-[77px]">
                     <Image
                         src={product.imgUrls[0]}
-                        width={0}
-                        height={0}
+                        width={70}
+                        height={70}
                         alt={product.name}
                         sizes="100vw"
                         className="h-auto max-h-[70%] w-auto max-w-[80%] rounded-lg"
-                        loading="lazy"
                     />
                 </div>
                 <div className="flex flex-col">
@@ -58,7 +58,7 @@ const CartItem = ({ product }: CartItemProps) => {
                             )
                         }
                     </div>
-                    <div className="flex items-center gap-1 my-1">
+                    <div className="flex items-center gap-2 mt-2">
                         <Button size={"icon"} variant={"outline"} className="w-8 h-8" onClick={handleDecreaseProductQuantityClick}>
                             <ArrowLeftIcon size={16} />
                         </Button>
@@ -69,10 +69,10 @@ const CartItem = ({ product }: CartItemProps) => {
                     </div>
                 </div>
             </div>
-            <Button variant={"outline"} size="icon" onClick={handleRemoveProductFromCartClick}>
+            <Button variant={"outline"} size="icon" onClick={handleRemoveProductFromCartClick} className=" hover:bg-primary">
                 <TrashIcon size={16} />
             </Button>
-        </div>
+        </Card>
     );
 }
 export default CartItem;

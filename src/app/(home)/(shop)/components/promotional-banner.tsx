@@ -6,16 +6,13 @@ interface PromotionalBannerProps {
 }
 
 const PromotionalBanner = ({ src, alt }: PromotionalBannerProps) => {
-
     return (
         <Image
             src={src}
             alt={alt}
-            width={0}
-            height={0}
-            sizes="100vw"
+            width={1280}
+            height={415}
             className="h-auto w-full"
-            loading="lazy"
         />
     );
 }

@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { ShoppingCartIcon } from "lucide-react";
 import { CartContext } from "@/providers/cart";
 import CartItem from "./cart-item";
 import { Separator } from "./separator";
@@ -7,9 +6,9 @@ import { ScrollArea } from "./scroll-area";
 import { Button } from "./button";
 import { createCheckout } from "@/actions/checkout";
 import { loadStripe } from "@stripe/stripe-js";
-import { 
-    signIn, 
-    useSession 
+import {
+    signIn,
+    useSession
 } from "next-auth/react";
 import { createOrder } from "@/actions/order";
 
@@ -39,18 +38,16 @@ const Cart = () => {
 
     return (
         <div className="flex flex-col h-full">
-            <div className="flex gap-2">
-                <ShoppingCartIcon />
-                <h1 className="text-left text-lg font-semibold">Carrinho</h1>
-            </div>
-            <div className="flex flex-col gap-5 my-8 h-full max-h-full overflow-hidden">
+            <h1 className="text-left text-lg font-semibold">Carrinho</h1>
+            <div className="flex flex-col my-5 h-full max-h-full overflow-hidden">
                 <ScrollArea className="h-full">
-                    <div className="flex flex-col gap-5 h-full">
+                    <div className="flex flex-col gap-2 h-full">
 
-                        {products.length > 0 ?
-                            products.map((product, index) => (
-                                <CartItem key={index} product={product} />
-                            )) : <p className="text-center font-semibold">Carrinho vazio, vamos as compras?</p>
+                        {
+                            products.length > 0 ?
+                                products.map((product, index) => (
+                                    <CartItem key={index} product={product} />
+                                )) : <p className="text-center font-semibold">Carrinho vazio, vamos as compras?</p>
                         }
 
                     </div>
@@ -60,7 +57,7 @@ const Cart = () => {
             {
                 products.length > 0 && (
 
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2">
                         <Separator />
                         <div className="flex items-center justify-between text-xs">
                             <p>Subtotal</p>

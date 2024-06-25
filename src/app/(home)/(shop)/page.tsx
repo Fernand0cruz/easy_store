@@ -15,17 +15,21 @@ const LazyProductList = dynamic(() => import('../../../components/ui/product-lis
 
 // Função assíncrona para buscar produtos com base no slug da categoria
 const fetchProducts = async (slug: string) => {
-  return prismaClient.product.findMany({
-    where: {
-      category: {
-        slug: slug,
-      }
-    }
-  });
+  try {
+    return await prismaClient.product.findMany({
+      where: {
+        category: {
+          slug: slug,
+        },
+      },
+    });
+  } catch (error) {
+    console.error("Erro ao buscar produtos:", error);
+    return [];
+  }
 }
 
 export default async function Home() {
-
   // Realiza várias consultas assíncronas para buscar produtos específicos
   const [deals, keyboards, mouses, headphones] = await Promise.all([
     // Busca produtos com desconto
@@ -35,6 +39,9 @@ export default async function Home() {
           gt: 0
         }
       }
+    }).catch((error) => {
+      console.error("Erro ao buscar ofertas:", error);
+      return [];
     }),
     // Busca produtos da categoria "keyboards" usando a função fetchProducts
     fetchProducts("keyboards"),
@@ -48,65 +55,63 @@ export default async function Home() {
     <div className="max-w-screen-xl mx-auto">
       <div className="flex flex-col gap-5">
         <Link href={"offers"}>
-          <PromotionalBanner src={"/banner_1.png"} alt="banner_1.png" />
+          <PromotionalBanner src={"/banner_1.png"} alt="banner_promotional"/>
         </Link>
 
-        <div>
-          <Categories />
-        </div>
+        <Categories />
 
-        <Card className="py-4 px-2">
+        <Card className="py-5 px-2">
           <div className="flex justify-between">
             <SectionTittle>Ofertas</SectionTittle>
             <Link href={"offers"} className="hidden sm:flex">
-              <p className="uppercase font-bold flex">ver mais<ArrowRightFromLineIcon /></p>
+              <p className="uppercase flex gap-2">ver mais<ArrowRightFromLineIcon /></p>
             </Link>
           </div>
           <LazyProductList products={deals} />
         </Card>
 
-        <Card className="py-4 px-2">
+        <Card className="py-5 px-2">
           <div className="mb-4">
             <div className="flex justify-between">
               <SectionTittle>Teclado</SectionTittle>
               <Link href={"/category/keyboards"} className="hidden sm:flex">
-                <p className="uppercase font-bold flex">ver mais<ArrowRightFromLineIcon /></p>
+                <p className="uppercase flex gap-2">ver mais<ArrowRightFromLineIcon /></p>
               </Link>
             </div>
             <LazyProductList products={keyboards} />
           </div>
           <Link href={"/category/keyboards"}>
-            <PromotionalBanner src={"/banner_2.png"} alt="banner_2.png" />
+            <PromotionalBanner src={"/banner_2.png"} alt="banner_promotional"/>
           </Link>
         </Card>
 
-        <Card className="py-4 px-2">
+        <Card className="py-5 px-2">
           <div className="mb-4">
             <div className="flex justify-between">
               <SectionTittle>Mouse</SectionTittle>
               <Link href={"/category/mouses"} className="hidden sm:flex">
-                <p className="uppercase font-bold flex">ver mais<ArrowRightFromLineIcon /></p>
+                <p className="uppercase flex gap-2">ver mais<ArrowRightFromLineIcon /></p>
               </Link>
             </div>
             <LazyProductList products={mouses} />
           </div>
           <Link href={"/category/mouses"}>
-            <PromotionalBanner src={"/banner_3.png"} alt="banner_3.png" />
+            <PromotionalBanner src={"/banner_3.png"} alt="banner_promotional"/>
           </Link>
         </Card>
 
-        <Card className="py-4 px-2">
+        <Card className="py-5 px-2">
           <div className="mb-4">
             <div className="flex justify-between">
               <SectionTittle>Fones</SectionTittle>
               <Link href={"/category/headphones"} className="hidden sm:flex">
-                <p className="uppercase font-bold flex">ver mais<ArrowRightFromLineIcon /></p>
+                <p className="uppercase flex gap-2">ver mais<ArrowRightFromLineIcon /></p>
               </Link>
             </div>
             <LazyProductList products={headphones} />
           </div>
           <Link href={"/category/headphones"}>
-            <PromotionalBanner src={"/banner_4.png"} alt="banner_4.png" />
+            <PromotionalBanner src={"/banner_4.png"} alt="banner_promotional"/>
           </Link>
         </Card>
       </div>

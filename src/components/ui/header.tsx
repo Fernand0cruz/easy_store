@@ -1,5 +1,4 @@
 "use client"
-
 import {
     MenuIcon,
     ShoppingCartIcon,
@@ -31,7 +30,11 @@ import {
     useSession
 } from "next-auth/react"
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import { 
+    useContext, 
+    useEffect, 
+    useState 
+} from "react";
 import { CartContext } from "@/providers/cart";
 
 const Header = () => {
@@ -73,10 +76,10 @@ const Header = () => {
 
     return (
         <Card className="fixed top-0 left-0 right-0 z-50">
-            <div className="flex justify-between items-center py-[1.875rem] max-w-7xl m-auto px-4">
+            <div className="flex justify-between items-center max-w-screen-xl mx-auto px-2 py-5">
                 <Sheet>
                     <SheetTrigger asChild>
-                        <Button size="icon" variant="outline">
+                        <Button size="icon" variant="outline" aria-labelledby="menu">
                             <MenuIcon />
                         </Button>
                     </SheetTrigger>
@@ -86,7 +89,7 @@ const Header = () => {
                         {
                             status === "authenticated" && data?.user && (
                                 <div className="flex flex-col">
-                                    <div className="flex items-center gap-2 py-4">
+                                    <div className="flex items-center gap-2 py-5">
                                         <Avatar>
                                             <AvatarFallback>
                                                 {data.user.name?.[0].toUpperCase()}
@@ -107,7 +110,7 @@ const Header = () => {
                             )
                         }
 
-                        <div className="mt-4 flex flex-col gap-2">
+                        <div className="mt-5 flex flex-col gap-2">
 
                             {renderAuthButton()}
 
@@ -145,7 +148,7 @@ const Header = () => {
                 </Link>
                 <Sheet>
                     <SheetTrigger asChild>
-                        <Button size="icon" variant="outline" className="relative">
+                        <Button size="icon" variant="outline" className="relative" aria-labelledby="card">
                             {cartQuantityItems > 0 && (
                                 <span className="absolute right-[calc(-1.25rem/2)] top-[calc(-1.25rem/2)] flex h-6 w-6 items-center justify-center rounded-lg bg-primary text-sm font-bold">
                                     {cartQuantityItems}
