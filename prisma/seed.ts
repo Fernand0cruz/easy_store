@@ -26,7 +26,7 @@ async function main() {
         ],
         basePrice: 650,
         categoryId: mousesCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10, 
       },
       {
         name: "Logitech Pro X Superlight",
@@ -41,7 +41,7 @@ async function main() {
         ],
         basePrice: 750,
         categoryId: mousesCategory.id,
-        discountPercentage: 5, // 5% discount
+        discountPercentage: 5, 
       },
       {
         name: "Logitech G305 Lightspeed",
@@ -56,8 +56,92 @@ async function main() {
         ],
         basePrice: 300,
         categoryId: mousesCategory.id,
-        discountPercentage: 15, // 15% discount
+        discountPercentage: 15, 
       },
+      {
+        name: "Cobra Cherry",
+        slug: "cobra-cherry",
+        description: "Uma grande parceria Redragon x Kabum misturando alto desempenho e design exclusivo e inigualável para os gamers do Brasil.",
+        imgUrls: [
+          "https://utfs.io/f/86b0c661-1508-447b-bcc3-56771c15925d-ki2thc.webp",
+          "https://utfs.io/f/f180a1e8-de7f-425a-8141-8ccd2c66ad57-ki2thd.webp",
+          "https://utfs.io/f/0e4b3cde-194c-4b12-bceb-20fed794bb5e-ki2th9.webp",
+          "https://utfs.io/f/477e8e0e-964e-4ee4-87a1-320510be0955-ki2thg.png"
+        ],
+        basePrice: 250,
+        categoryId: mousesCategory.id,
+        discountPercentage: 10, 
+      },
+      {
+        name: "Cooler Master MM730",
+        slug: "cooler-master-mm730",
+        description: "O MM730 retém o espírito inovativo da Cooler Master enquanto mantém a estética familiar de um clássico Mouse pra jogos. Cada componente de nível profissional contribúem para sua responsividade na velocidade da luz, num piscar de olhos. pés de PTFE genuínos para um deslizar sem igual, sensor óptico com ajuste para até 16.000 DPI, e micro-switches ópticos com qualidade superior de registro e durabilidade.",
+        imgUrls: [
+          "https://utfs.io/f/07a0a8fb-ddae-4a42-987f-a1cf3bdf1a90-5fdm5p.png",
+          "https://utfs.io/f/b25db50e-fdf1-4a47-9a4b-72c9e46db501-5fdm5q.png",
+          "https://utfs.io/f/5542a1cc-19ca-4c89-8ba1-bf1032a15a47-gzkq5v.webp",
+          "https://utfs.io/f/2856c716-0052-4242-930c-dda73669353e-q7nu7i.webp"
+        ],
+        basePrice: 350,
+        categoryId: mousesCategory.id,
+        discountPercentage: 6, 
+      },
+      {
+        name: "SuperFrame Flick Pro",
+        slug: "superframe-flick-pro",
+        description: "O Mouse Gamer SuperFrame Flick Pro não economiza quando se trata de precisão. Com o avançado sensor Pixart 3395, sua resolução de até 26.000 DPI proporciona uma precisão sem igual. ",
+        imgUrls: [
+          "https://utfs.io/f/f39b468b-4482-4113-b755-eb59319c6b01-6zubvz.png",
+          "https://utfs.io/f/6c08f43b-ebc3-46b5-a63c-abe812b761fd-ufu6th.png",
+          "https://utfs.io/f/033085bc-4803-400a-9cb3-8d37e60719ff-vd3upc.png",
+          "https://utfs.io/f/7be8b415-ac43-4a6e-a495-9df6cd2576fd-5lupdw.png"
+        ],
+        basePrice: 500,
+        categoryId: mousesCategory.id,
+        discountPercentage: 53, 
+      },
+      {
+        name: "Corsair Elite RGB",
+        slug: "corsair-elite-rgb",
+        description: "O mouse CORSAIR M65 RGB ELITE configurável para jogos é o mouse para jogos FPS mais avançado da CORSAIR, com estrutura de alumínio e o mais moderno sensor óptico com 18.000 DPI. ",
+        imgUrls: [
+          "https://utfs.io/f/f8c443a3-0761-496f-8e1a-c0df815890e1-x1xk42.png",
+          "https://utfs.io/f/8a21f981-eebf-481e-86c9-6287f79f063e-x1xk3f.png",
+          "https://utfs.io/f/9dd20a4e-e13b-406a-b789-4ef437ec92af-x1xk43.png",
+          "https://utfs.io/f/742b7448-1c32-4929-9fae-d6b3c3a39394-enprf2.png"
+        ],
+        basePrice: 600,
+        categoryId: mousesCategory.id,
+        discountPercentage: 41, 
+      },
+      {
+        name: "Force One Lynx",
+        slug: "force-one-lynx",
+        description: "Nunca fique na mão: o Force One Lynx conta com 2 modos de conexão – com ou sem fio. Jogue sem atraso com o Dongle Sem Fio 2.4 GHz ou o levíssimo Cabo Paracord USB-C.",
+        imgUrls: [
+          "https://utfs.io/f/ea5d2dc5-7f00-4112-baac-d56069dbe7bc-xx02t3.png",
+          "https://utfs.io/f/0082986e-e1df-42bc-bc50-3a0e5d134d14-ng57e0.png",
+          "https://utfs.io/f/61b007e4-9eb8-48e8-9a42-b55d3f3ba99b-x3huit.png",
+          "https://utfs.io/f/e176ba36-dfc9-4445-b7c9-bbf15aae1240-bnnph0.png"
+        ],
+        basePrice: 460,
+        categoryId: mousesCategory.id,
+        discountPercentage: 18, 
+      },
+      {
+        name: "Marvo M727",
+        slug: "marvo-m727",
+        description: "No universo competitivo dos jogos, cada movimento conta, e a diferença entre a vitória e a derrota muitas vezes está na precisão e no controle que você tem sobre sua jogabilidade. O Mouse Gamer Marvo M727 é um equipamento que vai além, oferecendo precisão excepcional, personalização avançada e um toque de estilo com sua iluminação RGB deslumbrante. Este é o mouse que vai elevar sua experiência de jogo a novos patamares.",
+        imgUrls: [
+          "https://utfs.io/f/57a73f67-da5c-40c9-bf20-c703695301e2-4zyakk.png",
+          "https://utfs.io/f/cea5c1eb-18e1-4d9f-b49b-15ea4c338d1a-ofmpr7.png",
+          "https://utfs.io/f/2daea839-e060-49fb-8975-c27df891e656-5xu9ys.png",
+          "https://utfs.io/f/408df4f3-11f3-4983-842b-34bfb572041f-5j8yjo.png"
+        ],
+        basePrice: 300,
+        categoryId: mousesCategory.id,
+        discountPercentage: 72, 
+      }
     ];
 
     await prisma.product.createMany({
@@ -86,7 +170,7 @@ async function main() {
         ],
         basePrice: 440,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5, 
       },
       {
         name: "Logitech MX Mechanical",
@@ -101,7 +185,7 @@ async function main() {
         ],
         basePrice: 700,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 15, // 10% discount
+        discountPercentage: 15, 
       },
       {
         name: "Redragon Gamer Ashe",
@@ -116,8 +200,98 @@ async function main() {
         ],
         basePrice: 400,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 25, // 10% discount
+        discountPercentage: 25, 
       },
+      {
+        name: "Ninja Black Noir",
+        slug: "ninja-black-noir",
+        description:
+          "Aprimore seu desempenho nos jogos com o teclado gamer ninja Black Noir, um teclado feito especialmente para gamers que buscam um teclado silencioso para uso durante a jogatina, misturando conforto e funcionalidades.",
+        imgUrls: [
+          "https://utfs.io/f/22e4c854-d678-4aa0-93a5-11aca999e44e-iczfcd.webp",
+          "https://utfs.io/f/48423a34-1862-414c-b644-59d93fb15af3-iczfd2.webp",
+          "https://utfs.io/f/ffadf7b4-7efc-4714-ac0e-69b3f1bf4dcb-iczfcg.webp",
+          "https://utfs.io/f/e1638deb-5869-4a21-9e15-a1f44aa0dcfc-iczfd3.webp"
+        ],
+        basePrice: 130,
+        categoryId: keyboardsCategory.id,
+        discountPercentage: 36, 
+      },
+      {
+        name: "Redragon Lakshmi",
+        slug: "redragon-lakshmi",
+        description:
+          "O Redragon LAKSHMI reúne o que há de melhor em um teclado para seu setup, entrega performance profissional, evita Double Clicks e possui o dobro de vida útil comparado a um teclado mecânico convencional, é o teclado perfeito para quem procura um excelente upgrade para seu setup.",
+        imgUrls: [
+          "https://utfs.io/f/32855a52-16eb-4df9-b48b-e50b44f0846a-ihyv3.png",
+          "https://utfs.io/f/c7ce60cc-7012-4606-8fd9-7b70c56f5297-hzagy2.png",
+          "https://utfs.io/f/c6b2dc25-8bf5-42e7-bf20-10dc12af1c31-hkqcee.png",
+          "https://utfs.io/f/c9071490-fd04-4f59-8f72-a585ad381ef3-3v3snf.png"
+        ],
+        basePrice: 300,
+        categoryId: keyboardsCategory.id,
+        discountPercentage: 37, 
+      },
+      {
+        name: "Redragon Kumara Pro",
+        slug: "redragon-kumara-pro",
+        description:
+          "Aprimore seu desempenho nos jogos com o Kumara K552-RGB PRO com switch mecânico Magnético Blue de altíssima qualidade garante um tempo de resposta ágil para os mais exigentes gamers.",
+        imgUrls: [
+          "https://utfs.io/f/a5f03c79-80da-4532-a02e-80ec125b73b0-14cozz.png",
+          "https://utfs.io/f/34919662-03e2-49ea-ab18-ce56bc83c371-v5kfo1.png",
+          "https://utfs.io/f/fbcd29b1-2bc3-4482-b748-59b3bcc96305-rf9ri.png",
+          "https://utfs.io/f/74f3fa06-1149-4bee-90cb-1c45a3278a74-awds64.png"
+        ],
+        basePrice: 550,
+        categoryId: keyboardsCategory.id,
+        discountPercentage: 47, 
+      },
+      {
+        name: "Akko Naruto Shippuden Sasuke",
+        slug: "akko-naruto-shippuden-sasuke",
+        description:
+          "O teclado Akko Naruto Shippuden Sasuke 3108V2 é um dos melhores modelos da akko. O switch Akko Pink que acompanha o teclado é excelente e tem um som satisfatório que ganhou o publico mundial. Qualidade, versatilidade e um preço justo para um teclado top de linha!",
+        imgUrls: [
+          "https://utfs.io/f/f375172d-157e-4d43-b7ed-cbc61c285ae5-497eca.webp",
+          "https://utfs.io/f/206032f1-c45b-478c-b4ef-c00612ca57a5-497ebo.webp",
+          "https://utfs.io/f/7bda461c-2d1f-4e2a-b705-3b6938c7d39e-497ecb.webp",
+          "https://utfs.io/f/ae241f0d-64fb-41f8-bb1d-746363291eee-497ebn.webp"
+        ],
+        basePrice: 780,
+        categoryId: keyboardsCategory.id,
+        discountPercentage: 25, 
+      },
+      {
+        name: "SuperFrame Ferz",
+        slug: "superframe-ferz",
+        description:
+          "O Teclado Gamer SuperFrame Ferz é um teclado mecânico feito para gamers, que apresenta um layout compacto 60% para os usuários que procuram deixar o máximo de espaço possível sobre a mesa.",
+        imgUrls: [
+          "https://utfs.io/f/2542a069-7585-4ec9-8c61-728e31617ff6-h7dqwc.png",
+          "https://utfs.io/f/00e4a6b1-72ed-4fa0-96ec-f4b33dee4839-sl99ix.png",
+          "https://utfs.io/f/3fbc7156-0058-4f4f-bfcc-52b6141533a8-rsx1ee.png",
+          "https://utfs.io/f/4ec0bbb1-0e32-4d36-9acd-59196a64d7d7-k11o4f.png"
+        ],
+        basePrice: 330,
+        categoryId: keyboardsCategory.id,
+        discountPercentage: 29, 
+      },
+      {
+        name: "8BitDo Fami Edition",
+        slug: "8Bitdo-fami-edition",
+        description:
+          "Domine o jogo com o Teclado Mecânico Gamer 8BitDo Fami Edition. Este teclado sem fio Bluetooth combina o melhor do estilo retrô com a tecnologia moderna, oferecendo uma experiência de digitação excepcional para jogadores exigentes.",
+        imgUrls: [
+          "https://utfs.io/f/d780c0f1-064f-4ef8-b07e-6b0be4813f93-ig2w57.png",
+          "https://utfs.io/f/74518bec-308a-470f-8ade-aa4ad6e16a4d-dmyrnv.png",
+          "https://utfs.io/f/f69ca7e3-de7a-4528-ba89-df35217e563b-cp2s9n.png",
+          "https://utfs.io/f/429b5aab-55cc-44bd-b4cb-d7c1feec77e3-gimq2t.png"
+        ],
+        basePrice: 750,
+        categoryId: keyboardsCategory.id,
+        discountPercentage: 0, 
+      }
     ];
 
     await prisma.product.createMany({
@@ -146,7 +320,7 @@ async function main() {
         ],
         basePrice: 1500,
         categoryId: headphonesCategory.id,
-        discountPercentage: 15, // 10% discount
+        discountPercentage: 15, 
       },
       {
         name: "Logitech Zone Wired Earbuds",
@@ -161,7 +335,7 @@ async function main() {
         ],
         basePrice: 550,
         categoryId: headphonesCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5, 
       },
       {
         name: "Hyperx Cloud Stinger 2",
@@ -176,7 +350,7 @@ async function main() {
         ],
         basePrice: 250,
         categoryId: headphonesCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0, 
       },
     ];
 
@@ -206,7 +380,7 @@ async function main() {
         ],
         basePrice: 200,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5, 
       },
       {
         name: "Logitech Mousepad Studio Series",
@@ -221,7 +395,7 @@ async function main() {
         ],
         basePrice: 250,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 15, // 10% discount
+        discountPercentage: 15, 
       },
       {
         name: "Force One Skyhawk Dark",
@@ -236,7 +410,7 @@ async function main() {
         ],
         basePrice: 300,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10, 
       },
       {
         name: "Force One Skyhawk Snow",
@@ -251,7 +425,7 @@ async function main() {
         ],
         basePrice: 300,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5,
       },
     ];
 
@@ -281,7 +455,7 @@ async function main() {
         ],
         basePrice: 2500,
         categoryId: monitorsCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0, 
       },
       {
         name: "Dell S3422DWG",
@@ -296,7 +470,7 @@ async function main() {
         ],
         basePrice: 3200,
         categoryId: monitorsCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0, 
       },
       {
         name: "Dell S3222DGM",
@@ -311,7 +485,7 @@ async function main() {
         ],
         basePrice: 3500,
         categoryId: monitorsCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0, 
       },
     ];
 
@@ -341,7 +515,7 @@ async function main() {
         ],
         basePrice: 4000,
         categoryId: speakersCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10, 
       },
       {
         name: "Sony XB23 Extra Bass",
@@ -356,7 +530,7 @@ async function main() {
         ],
         basePrice: 3500,
         categoryId: speakersCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0, 
       },
       {
         name: "Sony HT-S200F Soundbar",
@@ -371,7 +545,7 @@ async function main() {
         ],
         basePrice: 2500,
         categoryId: speakersCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0, 
       },
     ];
 
