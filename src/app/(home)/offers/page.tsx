@@ -51,7 +51,7 @@ export default async function Offers() {
                         <Card key={slug} className="flex flex-col py-5 px-2">
                             <div className="flex justify-between">
                                 <div className="flex gap-2">
-                                    <Icon />
+                                    <Icon size={22}/>
                                     <SectionTittle>
                                         {label}
                                     </SectionTittle>

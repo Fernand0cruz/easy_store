@@ -1,10 +1,10 @@
 import { KeyboardIcon, MonitorIcon, HeadphonesIcon, SquareIcon, SpeakerIcon, MouseIcon } from 'lucide-react';
 
 export const CATEGORY_ICON = {
-    keyboards: <KeyboardIcon size={16} />, // Use the imported KeyboardIcon component
-    monitors: <MonitorIcon size={16} />,
-    headphones: <HeadphonesIcon size={16} />,
-    mousepads: <SquareIcon size={16} />,
-    speakers: <SpeakerIcon size={16} />,
-    mouses: <MouseIcon size={16} />
+    keyboards: <KeyboardIcon size={22} />, // Use the imported KeyboardIcon component
+    monitors: <MonitorIcon size={22} />,
+    headphones: <HeadphonesIcon size={22} />,
+    mousepads: <SquareIcon size={22} />,
+    speakers: <SpeakerIcon size={22} />,
+    mouses: <MouseIcon size={22} />
 }
